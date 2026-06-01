@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0B192C;
+  --color-accent: #D4AF37;
+  --color-secondary: #C5A059;
+  --color-ivory: #FDFBF7;
+  
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Lato", sans-serif;
+}
+
+:root {
+  --primary: #0B192C;
+  --accent: #D4AF37;
+  --secondary: #C5A059;
+  --ivory: #FDFBF7;
+}
+
+body {
+  @apply bg-ivory text-primary font-sans antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-serif;
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #C5A059 100%);
+}
+
+.glass-nav {
+  @apply backdrop-blur-md bg-white/80 border-b border-primary/5;
+}
+
+/* Custom transitions */
+.smooth-hover {
+  @apply transition-all duration-300 ease-out;
+}
