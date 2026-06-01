@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight, MessageCircle, Star } from 'lucide-react';
+import Counter from './Counter';
 
 const WhatsAppIcon = ({ size = 24, className = "" }) => (
   <svg 
@@ -84,15 +85,21 @@ const Hero = () => {
             className="mt-16 pt-8 border-t border-white/10 flex gap-12"
           >
             <div>
-              <p className="text-accent text-3xl font-serif">15+</p>
+              <p className="text-accent text-3xl font-serif">
+                <Counter value={15} suffix="+" />
+              </p>
               <p className="text-white/40 text-xs uppercase tracking-widest font-sans">Years Experience</p>
             </div>
             <div>
-              <p className="text-accent text-3xl font-serif">10k+</p>
+              <p className="text-accent text-3xl font-serif">
+                <Counter value={10} suffix="k+" />
+              </p>
               <p className="text-white/40 text-xs uppercase tracking-widest font-sans">Students Taught</p>
             </div>
             <div>
-              <p className="text-accent text-3xl font-serif">98%</p>
+              <p className="text-accent text-3xl font-serif">
+                <Counter value={98} suffix="%" />
+              </p>
               <p className="text-white/40 text-xs uppercase tracking-widest font-sans">Success Rate</p>
             </div>
           </motion.div>

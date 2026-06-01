@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Trophy, Users2, Award } from 'lucide-react';
+import Counter from './Counter';
 
 const toppers = [
   {
@@ -59,7 +60,9 @@ const Results = () => {
                 <Trophy size={24} />
               </div>
               <div className="text-left">
-                <p className="text-2xl font-serif text-white leading-none">500+</p>
+                <p className="text-2xl font-serif text-white leading-none">
+                  <Counter value={500} suffix="+" />
+                </p>
                 <p className="text-white/40 text-xs uppercase tracking-widest mt-1">IIT Selections</p>
               </div>
             </div>
@@ -68,7 +71,9 @@ const Results = () => {
                 <Users2 size={24} />
               </div>
               <div className="text-left">
-                <p className="text-2xl font-serif text-white leading-none">1200+</p>
+                <p className="text-2xl font-serif text-white leading-none">
+                  <Counter value={1200} suffix="+" />
+                </p>
                 <p className="text-white/40 text-xs uppercase tracking-widest mt-1">Medical Ranks</p>
               </div>
             </div>
@@ -77,7 +82,9 @@ const Results = () => {
                 <Award size={24} />
               </div>
               <div className="text-left">
-                <p className="text-2xl font-serif text-white leading-none">95%</p>
+                <p className="text-2xl font-serif text-white leading-none">
+                  <Counter value={95} suffix="%" />
+                </p>
                 <p className="text-white/40 text-xs uppercase tracking-widest mt-1">Board Excellence</p>
               </div>
             </div>
