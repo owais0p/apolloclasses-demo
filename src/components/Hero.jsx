@@ -31,9 +31,9 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-serif text-ivory mb-6 leading-[1.1]"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-ivory mb-6 leading-[1.15]"
           >
-            Master <span className="text-accent italic">Chemistry</span> <br />
+            Master <span className="text-accent italic">Chemistry</span> <br className="hidden sm:block" />
             For Your Dreams.
           </motion.h1>
 
@@ -41,7 +41,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl text-ivory/70 mb-10 max-w-2xl font-sans leading-relaxed"
+            className="text-base md:text-lg text-ivory/70 mb-10 max-w-xl font-sans leading-relaxed"
           >
             Empowering aspirants for JEE, NEET, and Board Exams with personalized guidance and Kota's legendary teaching methodology. 
             Join Apollo Classes to ignite your academic journey.
