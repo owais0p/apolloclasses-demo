@@ -1,35 +1,27 @@
-import React, { useEffect, useRef } from 'react';
-import { useInView, useMotionValue, useSpring, useTransform, animate } from 'framer-motion';
+import React, { useEffect, useRef, useState } from 'react';
+import { useInView, animate } from 'framer-motion';
 
 const Counter = ({ value, duration = 2, suffix = "" }) => {
-  const count = useMotionValue(0);
-  const rounded = useTransform(count, (latest) => Math.round(latest));
+  const [count, setCount] = useState(0);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true });
 
   useEffect(() => {
     if (isInView) {
-      const controls = animate(count, value, {
+      const controls = animate(0, value, {
         duration: duration,
         ease: "easeOut",
+        onUpdate: (latest) => setCount(Math.round(latest)),
       });
       return controls.stop;
     }
-  }, [isInView, value, count, duration]);
+  }, [isInView, value, duration]);
 
-  return <span ref={ref}><AnimatedText value={rounded} />{suffix}</span>;
-};
-
-const AnimatedText = ({ value }) => {
-  const [displayValue, setDisplayValue] = React.useState(0);
-  
-  useEffect(() => {
-    return value.on("change", (latest) => {
-      setDisplayValue(latest);
-    });
-  }, [value]);
-
-  return <>{displayValue}</>;
+  return (
+    <span ref={ref}>
+      {count}{suffix}
+    </span>
+  );
 };
 
 export default Counter;
